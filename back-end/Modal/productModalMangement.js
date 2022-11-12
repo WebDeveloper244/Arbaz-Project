@@ -1,10 +1,10 @@
 const mongoose=require('mongoose')
 
 const productSechema=mongoose.Schema({
-    name:{
+    productName:{
         type:String,
         required:true
     }
 })
 
-module.exports=mongoose.modeln('Prodctcollection',productSechema)
+module.exports=mongoose.model('Prodctcollection',productSechema)
