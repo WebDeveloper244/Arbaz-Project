@@ -16,7 +16,13 @@ const productSechema=mongoose.Schema({
     productPrice:{
         type:Number,
         required:true
-    }
-})
+    },
+    status: { type: Number, default: 1 },
+    CreatedDate: {
+        type: String,
+        default: `${year}-${month}-${day}-${time}`,
+    },
+
+},{timeStamp:true})
 
 module.exports=mongoose.model('Prodctcollection',productSechema)
