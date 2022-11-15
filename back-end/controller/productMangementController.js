@@ -19,7 +19,11 @@ const ProductData = async (req, res) => {
     const { productName,productPrice } = req.body
     const docToCreate = new ProductModal({
       productName,
-      productPrice
+      productPrice,
+      ImageUrl:req.file.filename,
+      ImageName:req.file.originalname,
+      ImagemimeType:req.file.ImagemimeType, //i didnt use this method above becuse the 
+      //key was same in the image the key is different
     })
 
     const docToSave = await docToCreate.save()
