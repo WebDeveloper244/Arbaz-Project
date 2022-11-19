@@ -3,7 +3,10 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const AppLicationConfirgration = require('./configration/dataBaseConfigration')
+
+const ApplicationConfirgration=require('./configration/loadMyConfigrationFile')
+
+const dataBaseConfirgration = require('./configration/dataBaseConfigration')
 
 
 //Block End Dependencies
@@ -17,7 +20,7 @@ app.use(express.text());
 app.use(express.raw());
 app.use(cors());
 app.use('/assets', express.static('assets'));
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT || 4441;
 //Block End Intialize the app
 
 
