@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const AppLicationConfirgration=require('./configration/dataBaseConfigration')
+const AppLicationConfirgration = require('./configration/dataBaseConfigration')
 
 
 //Block End Dependencies
@@ -36,10 +36,10 @@ app.all('*', (req, res, next) => {
 
 //Start Block Accessing The Routes in the Entry Point
 
-const ProductMangementRouter=require('./Router/productMangementRouter'); 
+const ProductMangementRouter = require('./Router/productMangementRouter');
 
 //*****UsingRoutes*****//
-app.use('/ProductMangementRouter',ProductMangementRouter)
+app.use('/ProductMangementRouter', ProductMangementRouter)
 //*****UsingRoutes*****//
 
 
@@ -73,7 +73,7 @@ app.use((error, req, res, next) => {
 //Start Block For Listening Your App On Defined Port
 app.listen(PORT, () => {
     console.log(`You Application has Launched from the Port 🚀 🚀 ${PORT}`);
-   //  console.log(process.env.STRIPE_DEVELOPMENT_KEY);
+    //  console.log(process.env.STRIPE_DEVELOPMENT_KEY);
 })
 
 
