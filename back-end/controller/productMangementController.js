@@ -22,7 +22,7 @@ const ProductData = async (req, res) => {
       productPrice,
       ImageUrl:req.file.filename,
       ImageName:req.file.originalname,
-      ImagemimeType:req.file.ImagemimeType, //i didnt use this method above becuse the 
+      ImageMimeType:req.file.mimetype, //i didnt use this method above becuse the 
       //key was same in the image the key is different
     })
 
