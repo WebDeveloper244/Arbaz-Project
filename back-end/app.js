@@ -44,10 +44,12 @@ app.all('*', (req, res, next) => {
 
 const ProductMangementRouter = require('./Router/productMangementRouter');
 const AdminManagmentRouter=require('./Router/AdminMangementRouter')
+const PayManagmentRouter=require('./Router/PaymentMangementRoute')
 
 //*****UsingRoutes*****//
 app.use('/ProductMangementRouter', ProductMangementRouter)
 app.use('/AdminManagmentRouter', AdminManagmentRouter)
+app.use('/PayManagmentRouter', PayManagmentRouter)
 //*****UsingRoutes*****//
 
 
