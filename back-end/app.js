@@ -3,10 +3,11 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const dotenv=require('dotenv')
-dotenv.config()
 
-const ApplicationConfirgration=require('./configration/loadMyConfigrationFile')
+
+const ApplicationConfirgration=require('./configration/loadMyConfigrationFile') //first load env file then load other file
+//otherwise it will through an error like " MongoDb is not connectedMongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+
 
 const dataBaseConfirgration = require('./configration/dataBaseConfigration')
 
@@ -42,9 +43,11 @@ app.all('*', (req, res, next) => {
 //Start Block Accessing The Routes in the Entry Point
 
 const ProductMangementRouter = require('./Router/productMangementRouter');
+const AdminManagmentRouter=require('./Router/AdminMangementRouter')
 
 //*****UsingRoutes*****//
 app.use('/ProductMangementRouter', ProductMangementRouter)
+app.use('/AdminManagmentRouter', AdminManagmentRouter)
 //*****UsingRoutes*****//
 
 
