@@ -67,7 +67,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-// import { ProductService } from 'src/app/Shared/Services/product.service';
+import { ProductService } from 'src/app/shared/services/product.service';
+
 
 @Component({
   selector: 'app-products',
@@ -89,11 +90,11 @@ export class ProductsComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private ToastrService: ToastrService,
-    // private ProductService: ProductService
+    private productService:ProductService
   ) { this.buildForm() }
 
   ngOnInit(): void {
-    let MyArray = [1, 2, 3, 4, 5];
+    // let MyArray = [1, 2, 3, 4, 5];
     //    const [...newArray] = MyArray;
 
 
@@ -150,6 +151,8 @@ export class ProductsComponent implements OnInit {
     this.newSizeArray.forEach((elements: string) => {
       let formControl = new FormControl(elements)
       this.myProductForm.get("size").push(formControl)
+      console.log(this.myProductForm.value)
+    
     })
 
     // this.imageArray.forEach((element: any) => {
@@ -157,7 +160,7 @@ export class ProductsComponent implements OnInit {
     //   this.myProductForm.get("image").push(formControl)
     // })
 
-    let MultiPartFormData = new FormData();
+    let MultiPartFormData = new FormData(); //append takes two argument key and value left one is key and right one is value
     MultiPartFormData.append('productName', this.myProductForm.get('productName').value);
     MultiPartFormData.append('quantity', this.myProductForm.get('quantity').value);
     MultiPartFormData.append('price', this.myProductForm.get('price').value);
@@ -175,9 +178,10 @@ export class ProductsComponent implements OnInit {
 
 
 
-    // this.ProductService.CreateProductCard(MultiPartFormData).subscribe((ResponseComingFromBackend: any) => {
-    //   this.ToastrService.success(ResponseComingFromBackend.Message);
-    // })
+    this.productService.CreateProductCard(MultiPartFormData).subscribe((ResponseComingFromBackend: any) => {
+      console.log(ResponseComingFromBackend.Message)
+      // this.ToastrService.success(ResponseComingFromBackend.Message);
+    })
   }
 
 
