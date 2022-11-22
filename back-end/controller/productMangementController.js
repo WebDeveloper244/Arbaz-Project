@@ -4,13 +4,13 @@ const ProductModal = require('../Modal/productModalMangement')
 //   try {
 //     console.log(req.body)
 //     res.json({
-//         message:'You have reached the end point of Api',
+//         Message:'You have reached the end point of Api',
 //         result:req.body
 //     })
 //   } catch (error) {
 
 //   }
-// }{
+// }
   
 
 const ProductData = async (req, res) => {
@@ -22,9 +22,10 @@ const ProductData = async (req, res) => {
       productPrice,
       ImageUrl:req.file.filename,
       ImageName:req.file.originalname,
-      ImageMimeType:req.file.mimetype, //i didnt use this method above becuse the 
-      //key was same in the image the key is different
+      ImageMimeType:req.file.mimetype, 
     })
+    //i didnt use this method above becuse the 
+    //key was same in the image the key is different
 
     const docToSave = await docToCreate.save()
     res.json({

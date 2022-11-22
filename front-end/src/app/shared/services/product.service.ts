@@ -8,7 +8,7 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
   CreateProductCard(Payload:any){
-    return this.http.post('http://localhost:8686/ProductManagementRouter/ProductData',Payload);
+    return this.http.post('http://localhost:8686/ProductMangementRouter/ProductData',Payload);
   }
 }
 
