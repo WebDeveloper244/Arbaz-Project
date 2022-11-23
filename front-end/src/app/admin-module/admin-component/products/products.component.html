@@ -1,97 +1,4 @@
-<!-- 
-<div class="container my-3">
-  <form [formGroup]="ProductForm" (ngsubmit)="CreateProduct()">
-    <div class="row">
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Product Name</label>
-          <input type="text" class="form-control" formcontrolname="productName">
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Product Quantity</label>
-          <input type="number" class="form-control" formcontrolname="quantity">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Product Price</label>
-          <input type="number" class="form-control" formcontrolname="price">
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Company Name</label>
-          <input type="text" class="form-control" formcontrolname="companyName">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <textarea class="w-100" name="" id="" cols="30" rows="10" placeholder="Enter Description" formcontrolname="description"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Color</label>
-          <input type="text" class="form-control" formcontrolname="color">
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Logo Material</label>
-          <input type="text" class="form-control" formcontrolname="logoMaterial">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Select Sizes</label><br>
-          <ng-container *ngfor="let data of sizeArray">
-            <input class="form-check-input" type="checkbox" [value]="data" [id]="data" (click)="GetSizes($event)">
-            <label class="form-check-label mx-2" [for]="data">
-              {{data}}
-            </label>
-          </ng-container>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-3">
-          <label class="form-label">Product Material</label>
-          <input type="text" class="form-control" formcontrolname="productMaterial">
-        </div>
-      </div>
-    </div>
-    <div class="row mb-3">
-      <div class="col">
-        <label> Select an Oprion</label>
-        <select class="form-select" aria-label="Default select example" formcontrolname="category">
-          <option *ngfor="let data of categoryArray" [value]="data">{{data}}</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile" multiple="" (change)="GetImages($event)">
-      </div>
-    </div>
-    <div class="row">
-      <button type="submit" class="btn btn-primary w-100">Submit</button>
-    </div>
-  </form>
-</div>
- -->
-
-
-
-
- <div class="container">
+<div class="container">
   <div class="row">
    <div class="col-md-3">
     <div class="txt text-center">
@@ -143,7 +50,7 @@
            </label>
          </ng-container>
          </div>
-           
+         
  
    </div>
  
@@ -158,24 +65,47 @@
  
  <div class="mb-3">
    <label for="formFile" class="form-label tag">Select Images</label>
-   <input #FileSelect class="form-control input" type="file" id="formFile"  multiple (change)="getImages($event)" >
+   <input class="form-control input" #files type="file" id="formFile" multiple (change)="getImages($event)" >
  </div>
  
    </div>
    <div class="col">
-     <label for="" class="tag mb-2">Select Categories</label>
+     <label class="tag mb-2">Select Categories</label>
      <select class="form-select input" formControlName="category">
-       <option *ngFor="let data of categories" [value]="data">{{data}}</option>
+       <option #resetCategorie *ngFor="let data of categories" [value]="data">{{data}}</option>
      </select>
    </div>
  </div>
+ 
  <div class="row">
-   <button type="submit" class="btn button" [ngStyle]="{'border-color': disableButtonTrue ? 'red' : 'black'}"  [disabled]="disableButtonTrue" >Submit</button>
+   <!-- <button type="submit" class="btn button" [ngStyle]="{'border-color': disableButtonTrue ? 'red' : 'black'}"  [disabled]="disableButtonTrue" >Submit</button> -->
+   <button type="submit" class="btn button"  [disabled]="myProductForm.invalid" >Submit</button>
  </div>
  </form>
+ 
+ 
+ 
      </div>
    </div>
  
   </div>
  </div>
  
+ 
+ 
+ 
+ <!-- <label class="tag"> Select-Size </label>
+       <div class="selectSize">
+         <ng-container *ngFor="let item of selectSize">
+         <input type="checkbox" class="form-control" [id]="item"      [value]="item"     (click)="getSize($event)">
+         <input type="checkbox" class="form-control" id="medium"     value="medium"   formArrayName="Size" formControlName="size">
+         <input type="checkbox" class="form-control" id="large"      value="large"    formArrayName="Size" formControlName="size">
+         <input type="checkbox" class="form-control" id="x-large"    value="x-large"  formArrayName="Size" formControlName="size">
+         <input type="checkbox" class="form-control" id="xx-large"   value="xx-large" formArrayName="Size" formControlName="size">
+         <Label [for]="item">{{item}}</Label> 
+         <Label for="medium">M</Label>
+         <Label for="large">L</Label>
+         <Label for="x-large">X-L</Label>
+         <Label for="xx-large">XX-L</Label>
+       </ng-container>
+       </div> -->
