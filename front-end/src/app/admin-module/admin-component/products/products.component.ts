@@ -97,8 +97,7 @@ export class ProductsComponent implements OnInit {
    ) { this.buildForm()}
  
    ngOnInit(): void {
-    this.toastr.success('Hello Salman hope u are fine!', 'Toastr is Working!');
-    this.uncheckAll()
+    // this.uncheckAll()
    }
    buildForm(){
      this.myProductForm = this.formBuilder.group({
@@ -126,8 +125,8 @@ export class ProductsComponent implements OnInit {
    }
  
    getImages(event:any){
-     console.log(event);
-     console.log(this.files);
+    //  console.log(event);
+    //  console.log(this.files);
    if(event.target.files.length <= 5){
  
  // 1st step  this.imageArray.push(event.target.files) 
@@ -137,10 +136,11 @@ export class ProductsComponent implements OnInit {
     })
     this.imageArray;
    }else{
+    this.toastr.error(`You Cannot Select More Then 5 Images! but You have selected ${event.target.files.length}`);
      this.imageArray = [];
      this.files.nativeElement.value=null
      // this.disableButtonTrue = true
-  this.toastr.warning ('You Cannot Select More Then 5 Images!');
+ 
    }
    }
    uncheckAll(){
@@ -189,7 +189,7 @@ export class ProductsComponent implements OnInit {
    })
  
  this.createProductService.CreateProductCard(multiPartFormData).subscribe((responseCommingFromBackend:any)=>{
- console.log(responseCommingFromBackend);
+ console.log(responseCommingFromBackend.Body);
  
           this.myProductForm.reset()
            this.files.nativeElement.value=null
