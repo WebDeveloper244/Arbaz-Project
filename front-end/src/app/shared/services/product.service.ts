@@ -13,5 +13,12 @@ export class ProductService {
   GetAllProductData(){
     return this.http.get('http://localhost:8686/ProductMangementRouter/GetProductData')
   }
+  GetAllDataById(id:any){
+  return this.http.get(`http://localhost:8686/ProductMangementRouter/getDocumentById/${id}`)
+  }
+
+  DeleteDataById(id:any){
+    return this.http.delete(`http://localhost:8686/ProductMangementRouter/DeleteProductById/${id}`)
+  }
 }
 

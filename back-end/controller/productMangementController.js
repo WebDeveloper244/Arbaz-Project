@@ -122,7 +122,7 @@ const GetProductData = async (req,res)=>{
 // *************************************************** Get Data With ID for frontend//
 const getDocumentById = async (req,res)=>{                           // stop there ✋✋✋        // frontend get api first create (getDocumentById) and export it through destrcut
     try {
-        const ID = req.params.Id;
+        const ID = req.params.Id;  //controller Id and router Id getDoucmentById/:Id should match 
         const docToFind = await  ProductModel.findOne({_id:ID})
         res.json({
             Message:"Data Found",
