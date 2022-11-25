@@ -18,7 +18,12 @@ export class HomeComponent implements OnInit {
 
   getAllProductData(){
     this.ProductService.GetAllProductData().subscribe((res:any)=>{
-    this.showAllProduct = res.Result
+     res.Result.forEach((element:any)=>{
+      if(element.softDelete!==1){
+        this.showAllProduct.push(element
+          )
+      }
+    })
       
     })
 

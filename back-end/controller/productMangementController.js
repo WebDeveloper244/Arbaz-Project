@@ -168,8 +168,9 @@ try {
     const ID = req.params._id
     const docToGet = await ProductModel.findOne(
         {_id:ID}
-    ).lean()
-    
+    ).lean() //use lean with find query
+    //find empty object use !! marks and it will convert everthing into true and false
+    //if sometthing is coming into the dotoGet method then it will be true otherwise it will be false
    if(!!docToGet){
     const docToDelete = await ProductModel.deleteOne(
         {_id:docToGet._id}
@@ -177,13 +178,14 @@ try {
     docToGet.ProductImages.forEach(removeFilePath=>{
         fs.unlinkSync(`${removeFilePath.ProductImageUrl}`)
     })
-    fs.rmdirSync(`./assets/ProductImages/${docToGet.productName}`)
+    fs.rmdirSync(`/assets/Product/${docToGet.productName}`)
 res.json({
     Message:"Data Delete Successfuly",
     Result:docToDelete,
     data:true
 })
-   }else{
+   }
+   else{
     res.json({
         Message:"Data Not Deleted",
         Result:null,

@@ -20,5 +20,12 @@ export class ProductService {
   DeleteDataById(id:any){
     return this.http.delete(`http://localhost:8686/ProductMangementRouter/DeleteProductById/${id}`)
   }
+
+  hardDelte(id:any){
+   return this.http.delete(`http://localhost:8686/ProductMangementRouter/hardDeleteProductById${id}`)
+  }
+  updataData(payload:any){
+    return this.http.post('http://localhost:8686/ProductMangementRouter/updateProductById',payload)
+  }
 }
 
