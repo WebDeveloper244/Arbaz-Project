@@ -64,7 +64,7 @@
 // }
 
 
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -78,7 +78,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
 
 export class ProductsComponent implements OnInit {
   @ViewChild('files') files:ElementRef|any;
-  @ViewChild('resetCategorie') resetCategorie:ElementRef|any
+  @ViewChild('resetCategorie') resetCategorie:ElementRef|any;
+  @ViewChildren('checkBoxes') checkBoxes:QueryList<ElementRef> | undefined;
+  // @ViewChildren('checkBoxes') checkBoxes: QueryList<ElementRef> | undefined;
   
   color=["Red","Black","Blue","Multiple"];
   categories=["All","Latest"];
@@ -187,12 +189,21 @@ export class ProductsComponent implements OnInit {
    this.imageArray.forEach((imagesData:any)=>{
    multiPartFormData.append('images',imagesData)//Appending values to the getData varibale from FormGroup
    })
+
+  
+  
  
  this.createProductService.CreateProductCard(multiPartFormData).subscribe((responseCommingFromBackend:any)=>{
  console.log(responseCommingFromBackend.Body);
  
           this.myProductForm.reset()
-           this.files.nativeElement.value=null
+           this.files.nativeElement.value=null;
+           this.imageArray = [];
+           this.newSizeArray = [];
+           this.checkBoxes?.forEach((element:any)=>{
+            element.nativeElement.checked=false
+          
+            })
            
  })
    }
