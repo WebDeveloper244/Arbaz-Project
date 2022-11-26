@@ -6,6 +6,7 @@ import { ManagementModuleComponent } from './management-module.component';
 import { ManagementComponentsComponent } from './management-components/management-components.component';
 import { LoginComponent } from './management-components/login/login.component';
 import { SingUpComponent } from './management-components/sing-up/sing-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,9 @@ import { SingUpComponent } from './management-components/sing-up/sing-up.compone
   ],
   imports: [
     CommonModule,
-    ManagementModuleRoutingModule
+    ManagementModuleRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ManagementModuleModule { }
