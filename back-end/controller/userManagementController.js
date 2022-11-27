@@ -90,7 +90,7 @@ const userLogin = async (req, res) =>{
     } catch (error) {
         console.log(error)
         res.json({
-            Error: error.message,
+            Message: error.message,
             Data: false,
             Result: null
         })
