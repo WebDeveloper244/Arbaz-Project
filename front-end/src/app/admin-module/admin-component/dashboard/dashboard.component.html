@@ -1,1 +1,67 @@
-<p>dashboard works!</p>
+<div class="row my-2">
+    <div class="col-12">
+        <!-- <h4 class="mb-4"></h4> -->
+    </div> <!-- end col -->
+</div>
+<!-- end row -->
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card border-secondary border">
+            <div class="card-body">
+                <h5 class="card-title">User</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <a href="javascript: void(0);" class="btn btn-secondary btn-sm">Button</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+
+    <div class="col-md-4">
+        <div class="card border-primary border">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Order</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <a href="javascript: void(0);" class="btn btn-primary btn-sm">Button</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+
+    <div class="col-md-4">
+        <div class="card border-success border">
+            <div class="card-body">
+                <h5 class="card-title text-success">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to
+                    additional content.</p>
+                <a href="javascript: void(0);" class="btn btn-success btn-sm">Button</a>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+</div>
+<!-- end row -->
+
+<!-- bar chart  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-4 shadow p-3 mb-5 bg-white rounded ">
+                <div style="display: block" >
+                    <canvas baseChart
+                      [data]="barChartData"
+                      [options]="barChartOptions"
+                      
+                      [type]="barChartType"
+                      >
+                    </canvas>
+                  </div>
+                  
+                  
+            </div>
+            
+        </div>
+      
+    </div>
+
+<!-- bar chart  -->
+
