@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ManagementModuleModule } from './management-module/management-module.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { ManagementModuleModule } from './management-module/management-module.mo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ManagementModuleModule
+   
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
