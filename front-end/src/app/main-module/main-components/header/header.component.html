@@ -1,26 +1,31 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home">Ecommerce</a>
+      <a class="navbar-brand text-white" routerLink="/home">Ecommerce</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon "></span>
       </button>
+      <form class="d-flex w-50 mx-5 media" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  routerLink="/home">Home</a>
+            <a class="nav-link active text-white" aria-current="page"  routerLink="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/products">Products</a>
+            <a class="nav-link text-white" routerLink="/products">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about-us">About-Us</a>
+            <a class="nav-link text-white" routerLink="/about-us">About-Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/contact-us">Contact-Us</a>
+            <a class="nav-link text-white" routerLink="/contact-us">Contact-Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="ManagementModule/login"><i class="fas fa-user"></i> <button class="btn btn-outline-success">Sign-In</button></a>
+            <a class="nav-link text-white" routerLink="ManagementModule/login"><i class="fas fa-user"></i> </a>
           </li>
         </ul>
       </div>

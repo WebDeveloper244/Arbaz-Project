@@ -20,3 +20,8 @@
     /* if you want to check the border please uncomment below code */
     /* border-color: yellow !important; */
 }
+/* media query  */
+@media screen and (min-width: 360px) {
+    .media{width: 100px;}
+ }
+/* media query  */
