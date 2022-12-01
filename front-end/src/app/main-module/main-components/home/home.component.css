@@ -1,0 +1,7 @@
+/* .flexid{
+    display: flex;
+} */
+
+ul>li>img{
+    height: 300px;
+}

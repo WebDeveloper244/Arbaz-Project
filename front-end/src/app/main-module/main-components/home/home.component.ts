@@ -8,11 +8,14 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class HomeComponent implements OnInit {
   showAllProduct:any=[]
+  searchProductData:any=[]
   Url= 'http://localhost:8686/'
   constructor(private ProductService:ProductService) { }
 
   ngOnInit(): void {
-    this.getAllProductData()
+    this.getAllProductData();
+    
+  
   }
 
 
@@ -28,6 +31,16 @@ export class HomeComponent implements OnInit {
     })
 
     
+  }
+
+  searchAllProductData(id:any){
+   this.ProductService.GetAllDataById(id).subscribe((res:any)=>{
+    res.Result.forEach((element:any)=>{
+      if(element.productName){
+        this.searchProductData.push(element)
+      }
+    })
+   })
   }
 
 }

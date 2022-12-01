@@ -1,16 +1,54 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6" *ngFor="let data of showAllProduct">
-            <div class="card" style="width: 18rem;">
-                <img [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{data.productName}}</h5>
-                  <p class="card-text">{{data.description}}</p>
-                  <p class="card-text">Price:{{data.price-1 | currency }} </p>
-                  <p class="card-text">Quantity:{{data.quantity}} </p>
-                  <a href="#" class="btn btn-primary w-100">CheckOut</a>
-                </div>
-              </div>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-4 my-2 ">
+      <div class="card shadow" style="width: 25rem;">
+        <div class="card-header bg-primary text-white text-muted">
+          <h3>Catagories</h3>
         </div>
+        <ul class="list-group list-group-flush">
+          <div class="d-flex my-2">
+            <li class="list-group-item">Prefrence:</li>
+            <div class="d-flex mx-2">
+              <button class="btn btn-primary mx-3">Vertically</button>
+              <button class="btn btn-primary">Horizantily</button>
+            </div>
+          </div>
+          <li class="list-group-item"><label for="customRange3" class="form-label">Specify Your Range </label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3"></li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+
     </div>
-</div>
+    <div class="col-3 col-md-6 col-xl-3" *ngFor="let data of showAllProduct">
+      <div class="row my-3">
+        <div class="col ">
+          <div class="card shadow" style="width: 18rem;">
+            <div class="card-header bg-primary">
+              
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item "><img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded w-100" alt="..."></li>
+              <li class="list-group-item"> <h5 class="card-title">Name:<b>{{data.productName}} Price:{{data.price-1 | currency }} </b></h5></li>
+              <li class="list-group-item"><h5 class="card-title">Desc: {{data.description}}</h5></li>
+              <li class="list-group-item"> <a href="#" class="btn btn-primary w-100">CheckOut</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <div class="card shadow rounded" style="width: 16rem;height: 4rem;">
+    <img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded " alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Name:<b>{{data.productName}}</b></h5>
+      <h5 class="card-title">Desc: {{data.description}}</h5>
+      <div class="d-flex">
+        <h5 class="card-title mx-1">Price:{{data.price-1 | currency }}</h5>
+        <h5 class="card-title text-info">Quantity:{{data.quantity}} </h5>
+      </div>
+      <a href="#" class="btn btn-primary w-100">CheckOut</a>
+    </div>
+  </div> -->

@@ -14,7 +14,7 @@ export class ProductService {
     return this.http.get('http://localhost:8686/ProductMangementRouter/GetProductData')
   }
   GetAllDataById(id:any){
-  return this.http.get(`http://localhost:8686/ProductMangementRouter/getDocumentById/${id}`)
+    return this.http.get(`http://localhost:8686/ProductMangementRouter/getDocumentById/${id}`)
   }
 
   DeleteDataById(id:any){
