@@ -27,5 +27,9 @@ export class ProductService {
   updataData(payload:any){
     return this.http.post('http://localhost:8686/ProductMangementRouter/updateProductById',payload)
   }
+
+  GetDataWhoseCategoryIsAll(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/getDocumentByCatagory')
+  }
 }
 

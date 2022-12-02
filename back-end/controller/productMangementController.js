@@ -340,6 +340,29 @@ const UpDateProductData = async(req,res)=>{
 //     }
 // }
 
+const getDocumentByCatagory=async (req,res)=>{
+    try {
+        // const catagory = req.params.catagory
+        const docToFInd = await ProductModel.find(
+            {
+                category:"All"
+        //    $match:{category:catagory}
+            }
+        )
+        res.json({
+            Message:'Data find successfuly',
+            Result:docToFInd,
+            Data:true
+        })
+        
+    } catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+}
 
 
 module.exports={
@@ -350,6 +373,7 @@ module.exports={
     hardDeleteProductById,   //hard delete
     getDocumentById,                             // frontend get api
     updateProductById,
-    getDataWithCompanyName
+    getDataWithCompanyName,
+    getDocumentByCatagory
 }
 //3rd Step
