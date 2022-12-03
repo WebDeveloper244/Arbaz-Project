@@ -15,6 +15,7 @@ import { ProductsComponent } from './main-components/products/products.component
 import { PurchaseFailedComponent } from './main-components/purchase-failed/purchase-failed.component';
 import { PurchaseSuccessfulComponent } from './main-components/purchase-successful/purchase-successful.component';
 import { ViewProductComponent } from './main-components/view-product/view-product.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ViewProductComponent } from './main-components/view-product/view-produc
   ],
   imports: [
     CommonModule,
-    MainModuleRoutingModule
+    MainModuleRoutingModule,
+    ToastrModule.forRoot()
   ]
 })
 export class MainModuleModule { }

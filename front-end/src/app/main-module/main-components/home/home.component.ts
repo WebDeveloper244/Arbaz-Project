@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
@@ -11,10 +12,11 @@ export class HomeComponent implements OnInit {
   AllCatgory:any=[]
   Url= 'http://localhost:8686/'
   show:boolean=true
-  constructor(private ProductService:ProductService) { }
+  constructor(private ProductService:ProductService,private toastrService:ToastrService) { this.getLatestCategoryData()}
 
   ngOnInit(): void {
     this.getAllProductData();
+    
     
   
   }
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
         this.showAllProduct.push(element
           )
       }
+     
     })
       
     })
@@ -38,15 +41,20 @@ export class HomeComponent implements OnInit {
         if(element.softDelete!==1){
           this.AllCatgory.push(element)
           
+          
         }
+       
       })
      console.log( this.AllCatgory)
-      this.show=false
+      
     })
   }
 
   getAllData(){
     this.show=true
+  }
+  getLatestData(){
+    this.show=false;
   }
 
   // searchAllProductData(id:any){
