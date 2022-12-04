@@ -21,7 +21,7 @@
       </div>
 
     </div>
-    <div class="col-3 col-md-6 col-xl-3" *ngFor="let data of showAllProduct">
+    <div class="col-8  d-flex justify-content-center" *ngFor="let data of showAllProduct">
       <div class="row my-3" [hidden]="show===false">
         <div class="col ">
           <div class="card shadow" style="width: 18rem;">
@@ -40,8 +40,9 @@
     </div>
 
     <!-- showDatawhoseCatagoryIs -->
-    <div class="col-3 col-md-6 col-xl-3" *ngFor="let data of AllCatgory">
-      <div class="row my-3" *ngIf="show===false" >
+    <div class="col-3 col-md-6 col-xl-3 d-flex justify-content-center" *ngFor="let data of AllCatgory">
+     <div class="container">
+       <div class="row my-3" *ngIf="show===false" >
         <div class="col" >
           <div class="card shadow" style="width: 18rem;">
             <div class="card-header bg-primary">
@@ -56,6 +57,7 @@
           </div>
         </div>
       </div>
+     </div>
     </div>
     <!-- showDatawhoseCatagoryIs -->
 
