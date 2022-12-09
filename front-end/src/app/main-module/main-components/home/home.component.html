@@ -1,4 +1,80 @@
-<div class="container my-4">
+<!-- updated  -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="my-2">
+        <div class="card shadow" style="width: 25rem;">
+          <div class="card-header bgcolor text-white text-muted">
+            <h3>Catagories</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <div class="d-flex my-2">
+              <li class="list-group-item">Prefrence:</li>
+              <div class="d-flex mx-2">
+                <button class="btn btn-primary mx-3">Vertically</button>
+                <button class="btn btn-primary">Horizantily</button>
+              </div>
+            </div>
+            <li class="list-group-item"><label for="customRange3" class="form-label">Specify Your Range </label>
+              <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3"></li>
+            <li class="list-group-item"><button class="btn btn-primary w-100" (click)="getLatestData()">latest data </button> </li>
+            <li class="list-group-item"><button class="btn btn-primary w-100" (click)="getAllData()"> All data </button> </li>
+          </ul>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-8">
+      <!---------------------- List-View -------------------------->
+        <div class="row">
+          <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of showAllProduct">
+            <div class="my-3" [hidden]="show===false">
+              <div class="col ">
+                <div class="card shadow" style="width: 18rem;">
+                  <div class="card-header bgcolor">
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item "><img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded w-100" alt="..."></li>
+                    <li class="list-group-item"> <h5 class="card-title">Name:<b>{{data.productName}} Price:{{data.price-1 | currency }} </b></h5></li>
+                    <li class="list-group-item"><h5 class="card-title">Desc: {{data.description}}</h5></li>
+                    <li class="list-group-item"> <a href="#" class="btn btn-primary w-100">CheckOut</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       <!---------------------- Grid-View -------------------------->
+       <div class="row">
+        <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of AllCatgory">
+          <div class="my-3" *ngIf="show===false" >
+              <div class="card shadow" style="width: 18rem;">
+                <div class="card-header bgcolor">
+                  
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item "><img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded w-100" alt="..."></li>
+                  <li class="list-group-item"> <h5 class="card-title">Name:<b>{{data.productName}} Price:{{data.price-1 | currency }} </b></h5></li>
+                  <li class="list-group-item"><h5 class="card-title">Desc: {{data.description}}</h5></li>
+                  <li class="list-group-item"> <a href="#" class="btn  w-100">CheckOut</a></li>
+                </ul>
+              </div>
+          </div>
+        </div>
+       </div>
+
+      </div> 
+  </div>
+</div>
+
+<!-- updated  -->
+
+
+
+
+
+
+
+<!-- <div class="container my-4">
   <div class="row">
     <div class="col-4 my-2 ">
       <div class="card shadow" style="width: 25rem;">
@@ -40,7 +116,7 @@
     </div>
 
     <!-- showDatawhoseCatagoryIs -->
-    <div class="col-3 col-md-6 col-xl-3 d-flex justify-content-center" *ngFor="let data of AllCatgory">
+    <!-- <div class="col-3 col-md-6 col-xl-3 d-flex justify-content-center" *ngFor="let data of AllCatgory">
      <div class="container">
        <div class="row my-3" *ngIf="show===false" >
         <div class="col" >
@@ -58,10 +134,10 @@
         </div>
       </div>
      </div>
-    </div>
+    </div> -->
     <!-- showDatawhoseCatagoryIs -->
 
-  </div>
+  <!-- </div> --> -->
 
 
   <!-- <div class="card shadow rounded" style="width: 16rem;height: 4rem;">

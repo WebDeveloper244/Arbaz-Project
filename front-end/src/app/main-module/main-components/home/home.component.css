@@ -5,3 +5,6 @@
 ul>li>img{
     height: 300px;
 }
+.bgcolor{
+    background-image: linear-gradient(to right,rgb(0, 0, 0),#0f70ff);
+}
