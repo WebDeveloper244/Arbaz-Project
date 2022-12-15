@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-product',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute:ActivatedRoute) { 
+    this.getValueFromParms()
+  }
 
   ngOnInit(): void {
+  }
+
+  getValueFromParms(){
+    const parmsId=this.activatedRoute.snapshot.paramMap.get('id')
+    console.log(parmsId)
   }
 
 }

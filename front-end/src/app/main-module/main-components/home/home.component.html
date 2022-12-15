@@ -36,7 +36,7 @@
                     <li class="list-group-item "><img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded w-100" alt="..."></li>
                     <li class="list-group-item"> <h5 class="card-title">Name:<b>{{data.productName}} Price:{{data.price-1 | currency }} </b></h5></li>
                     <li class="list-group-item"><h5 class="card-title">Desc: {{data.description}}</h5></li>
-                    <li class="list-group-item"> <a href="#" class="btn btn-primary w-100">CheckOut</a></li>
+                    <li class="list-group-item"> <a routerLink="/view-product/{{data._id}}" class="btn btn-primary w-100">CheckOut</a></li>
                   </ul>
                 </div>
               </div>
@@ -55,7 +55,7 @@
                   <li class="list-group-item "><img  [src]='Url+data.ProductImages[0].ProductImageUrl' class="card-img-top rounded w-100" alt="..."></li>
                   <li class="list-group-item"> <h5 class="card-title">Name:<b>{{data.productName}} Price:{{data.price-1 | currency }} </b></h5></li>
                   <li class="list-group-item"><h5 class="card-title">Desc: {{data.description}}</h5></li>
-                  <li class="list-group-item"> <a href="#" class="btn  w-100">CheckOut</a></li>
+                  <li class="list-group-item"> <a routerLink="/view-product/{{data._id}}" class="btn btn-primary w-100">CheckOut</a></li>
                 </ul>
               </div>
           </div>

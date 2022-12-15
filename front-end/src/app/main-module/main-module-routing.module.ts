@@ -25,7 +25,7 @@ const routes: Routes = [
     {path:'footer',component:FooterComponent},
     {path:'header',component:HeaderComponent},
     {path:'products',component:ProductsComponent},
-    {path:'view-product',component:ViewProductComponent},
+    {path:'view-product/:id',component:ViewProductComponent},
     {path:'purchase-failed',component:PurchaseFailedComponent},
     {path:'purchase-successful',component:PurchaseSuccessfulComponent},
   ]
