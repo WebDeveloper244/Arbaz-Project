@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProductInterface } from 'src/app/shared/interface/product';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
   selector: 'app-view-product',
@@ -7,8 +9,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
-
-  constructor(private activatedRoute:ActivatedRoute) { 
+public productObject:ProductInterface | any={}
+  constructor(
+    private activatedRoute:ActivatedRoute,
+    private productService:ProductService
+    
+    ) { 
     this.getValueFromParms()
   }
 
@@ -18,6 +24,9 @@ export class ViewProductComponent implements OnInit {
   getValueFromParms(){
     const parmsId=this.activatedRoute.snapshot.paramMap.get('id')
     console.log(parmsId)
+    this.productService.GetAllDataById(parmsId).subscribe((res:any)=>{
+      this.productObject=res.Result;
+    })
   }
 
 }
