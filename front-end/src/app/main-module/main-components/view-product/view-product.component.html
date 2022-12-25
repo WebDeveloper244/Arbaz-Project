@@ -1,57 +1,49 @@
-
-<!-- <h1>{{productObject?.productName}}</h1> -->
-<div class="container my-5">
+<div class="container">
     <div class="row">
-        <div class="col d-flex justify-content-center">
-            <div>
-                <div *ngFor="let data of productObject.imageDetaisl">
-                    <img [src]="url+data?.ImageUrl" alt="" class="img-fluid">
-                </div>
-            </div>
-
+        <div class="col-md-4">
+           <div class="image-rapper" *ngFor="let data of productObject?.ProductImages">
+            <img [src]="url+data.ProductImageUrl" alt="">
+           </div>
         </div>
-        <div class="col d-flex justify-content-center">
-            <div>
-                <h1>{{productObject.companyName}}</h1>
-                <h3>{{productObject.price | currency:'CAD':'code'}}</h3>
-                <h3>Please Select Size</h3>
+        <div class="col-md-8">
+            <h1 class="text">{{productObject?.productName}}</h1>
+            <hr>
+           <div class="content">
+            <span>Total Quantity</span>
+            <ul>
+
+                <li>{{productObject?.quantity}}</li>
+            </ul>
+            <span>Please Select Size:</span>
+            <div class="d-flex justify-content-center">
                 <div class="cat action" *ngFor="let data of productObject.size">
                     <label>
                         <input type="checkbox" [value]="data" (click)="getSizes($event)"><span>{{data}}</span>
                     </label>
                 </div>
-                <p class="h3">Available Colors : {{productObject.color}}</p><br>
-                <p class="h3">Quantity in Stock : <span class="stock">{{productObject.quantity}}</span></p>
-                <div>
-                    <button class="btn btn-outline-success mx-3" (click)="decrementQuantity()">-</button>
-                    <button class="btn btn-outline-success mx-3">{{selectedQuantity}}</button>
-                    <button class="btn btn-outline-success mx-3"(click)="incrementQuantity()">+</button>
-                </div>
-                <br>
-                <button class="btn btn-outline-dark" type="button" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling"
-                aria-controls="offcanvasScrolling" (click)="addToCart()">{{enumButtonText['Add To Cart']}}</button><br>
-                <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
-                aria-controls="offcanvasScrolling">{{enumButtonText['View Cart']}}</button><br>
-                <button class="btn btn-outline-dark">{{enumButtonText['Continue Shopping']}}</button><br>
-                <button class="btn btn-outline-dark">{{enumButtonText['Go To Home']}}</button><br>
+    
             </div>
+            <div >
+                <button (click)="derease()">-</button>
+               {{selectedQuantity}}
+            <button (click)="increase()">+</button>
+            </div>
+            <button class="btn btn-outline-primary" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="addToCart()">Add To Cart</button>
+            
+
+           </div>
+           
         </div>
     </div>
+</div>
 
-
-
-    <div class="offcanvas offcanvas-end bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cart</h5>
-            <button type="button" class="btn-close text-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                <img class="img-thumbnail" [src]="url+productObject?.imageDetaisl[0].ImageUrl" alt="">
-                <button class="btn btn-outline-success mx-3" (click)="decrementQuantity()">-</button>
-                    <button class="btn btn-outline-success mx-3">{{selectedQuantity}}</button>
-                    <button class="btn btn-outline-success mx-3"(click)="incrementQuantity()">+</button>
-            </div>
-        </div>
+<!-- offcanvas -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <div class="offcanvas-body">
+      <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+  </div>

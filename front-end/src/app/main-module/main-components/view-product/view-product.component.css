@@ -4,9 +4,9 @@
     color: black !important;
   }
   
-  .img-thumbnail{
-    height: 100px;
-    width: 100px;
+  .image-rapper>img{
+    height: 30vh;
+    width: 100%;
   }
   
   .cat{
@@ -17,7 +17,29 @@
       overflow: hidden;
       float: left;
     }
-    
+    .container{  
+      margin-top: 12vh;
+      margin-bottom: 3vh;
+    }
+    .content{
+      border-left: 3px solid blue;
+      text-align: center;
+    }
+    .content>ul{
+      list-style: none;
+      border: 1px solid green;
+      display: inline block;
+      text-align: center;
+      width: 46px;
+      margin-left: 45%;
+      margin-top: 9px;
+    }
+    .content>ul>li{
+      margin-left: -30px;
+    }
+    ul:hover{
+      background-color: #f3f3f3;
+    }
     .cat label {
       float: left; line-height: 3.0em;
       width: 8.0em; height: 3.0em;
