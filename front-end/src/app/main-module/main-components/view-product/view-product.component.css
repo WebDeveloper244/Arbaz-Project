@@ -22,7 +22,7 @@
       margin-bottom: 3vh;
     }
     .content{
-      border-left: 3px solid blue;
+      border-left: 8px solid blue;
       text-align: center;
     }
     .content>ul{
@@ -66,7 +66,10 @@
         text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
     }
     
-    
+    .img-thumbnail{
+      height: 100px;
+      width: 100px;
+    }
     /*
     This following statements selects each category individually that contains an input element that is a checkbox and is checked (or selected) and chabges the background color of the span element.
     */

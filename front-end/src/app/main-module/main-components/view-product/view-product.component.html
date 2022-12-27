@@ -32,11 +32,11 @@
                {{selectedQuantity}}
             <button class="btn btn-outline-primary mx-3 "(click)="increase()">+</button>
             </div>
-            <button class="btn btn-outline-primary" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="addToCart()">{{enumButtonText['Add To Cart']}}</button>
-            <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+            <button class="btn btn-outline-primary my-1 mx-1" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="addToCart()">{{enumButtonText['Add To Cart']}}</button>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
                 aria-controls="offcanvasScrolling">{{enumButtonText['View Cart']}}</button><br>
-            <button class="btn btn-outline-dark">{{enumButtonText['Continue Shopping']}}</button><br>
-            <button class="btn btn-outline-dark">{{enumButtonText['Go To Home']}}</button><br>
+            <button class="btn btn-outline-primary my-1">{{enumButtonText['Continue Shopping']}}</button><br>
+            <button class="btn btn-outline-primary">{{enumButtonText['Go To Home']}}</button><br>
             
 
            </div>
@@ -46,12 +46,19 @@
 </div>
 
 <!-- offcanvas -->
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-end bg-dark" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cart</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <p>Try scrolling the rest of the page to see this option in action.</p>
+        
+            <div>
+                <img class="img-thumbnail" [src]="url+productObject?.ProductImages[0].ProductImageUrl" alt="">
+                <button class="btn btn-outline-success mx-3" (click)="derease()">-</button>
+                    <button class="btn btn-outline-success mx-3">{{selectedQuantity}}</button>
+                    <button class="btn btn-outline-success mx-3"(click)="increase()">+</button>
+            </div>
+        
     </div>
   </div>
