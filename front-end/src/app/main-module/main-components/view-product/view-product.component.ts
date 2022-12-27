@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BUTTONTEXT } from 'src/app/shared/enums/button-text';
 import { ProductInterface } from 'src/app/shared/interface/product';
 import { LocalStoragesmanagementServiceService } from 'src/app/shared/services/local-storagesmanagement-service.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -17,6 +18,8 @@ public productObject:ProductInterface | any={}
 public selectedSizes:any=[];
 public selectedQuantity : any =0;
 public totalQuantity:any
+public enumButtonText = BUTTONTEXT;
+
 public offCanvas='';
 // 
   constructor(

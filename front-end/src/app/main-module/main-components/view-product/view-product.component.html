@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4  d-flex justify-content-center">
            <div class="image-rapper" *ngFor="let data of productObject?.ProductImages">
             <img [src]="url+data.ProductImageUrl" alt="">
            </div>
@@ -14,21 +14,29 @@
 
                 <li>{{productObject?.quantity}}</li>
             </ul>
+            <h1>{{productObject.companyName}}</h1>
+            <h3>{{productObject.price | currency}}</h3>
             <span>Please Select Size:</span>
             <div class="d-flex justify-content-center">
+              
                 <div class="cat action" *ngFor="let data of productObject.size">
                     <label>
                         <input type="checkbox" [value]="data" (click)="getSizes($event)"><span>{{data}}</span>
                     </label>
                 </div>
+                
     
             </div>
             <div >
-                <button (click)="derease()">-</button>
+                <button class="btn btn-outline-primary mx-3 " (click)="derease()">-</button>
                {{selectedQuantity}}
-            <button (click)="increase()">+</button>
+            <button class="btn btn-outline-primary mx-3 "(click)="increase()">+</button>
             </div>
-            <button class="btn btn-outline-primary" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="addToCart()">Add To Cart</button>
+            <button class="btn btn-outline-primary" [attr.data-bs-toggle]="offCanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" (click)="addToCart()">{{enumButtonText['Add To Cart']}}</button>
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling">{{enumButtonText['View Cart']}}</button><br>
+            <button class="btn btn-outline-dark">{{enumButtonText['Continue Shopping']}}</button><br>
+            <button class="btn btn-outline-dark">{{enumButtonText['Go To Home']}}</button><br>
             
 
            </div>
