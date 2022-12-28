@@ -48,7 +48,13 @@
     <div class="col-md-8">
       <!---------------------- List-View -------------------------->
         <div class="row">
-          <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of showAllProduct">
+          <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of showAllProduct | paginate
+          : {
+              itemsPerPage: tableSize,
+              currentPage: page,
+              totalItems: count
+            };
+      let i = index">
             <div class="my-3" [hidden]="show===false">
               <div class="col ">
                 <div class="card shadow" style="width: 18rem;">
@@ -67,7 +73,13 @@
         </div>
        <!---------------------- Grid-View -------------------------->
        <div class="row">
-        <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of AllCatgory">
+        <div class="col-md-4 d-flex justify-content-center" *ngFor="let data of AllCatgory | paginate
+        : {
+            itemsPerPage: tableSize,
+            currentPage: page,
+            totalItems: count
+          };
+    let i = index">
           <div class="my-3" *ngIf="show===false" >
               <div class="card shadow" style="width: 18rem;">
                 <div class="card-header bgcolor">
@@ -86,6 +98,18 @@
 
       </div> 
   </div>
+
+  <!-- // pagination  -->
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
+    <!-- // pagination  -->
+
 </div>
 
 <!-- updated  -->

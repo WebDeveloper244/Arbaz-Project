@@ -16,6 +16,7 @@ import { PurchaseFailedComponent } from './main-components/purchase-failed/purch
 import { PurchaseSuccessfulComponent } from './main-components/purchase-successful/purchase-successful.component';
 import { ViewProductComponent } from './main-components/view-product/view-product.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     CommonModule,
     MainModuleRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxPaginationModule
   ]
 })
 export class MainModuleModule { }

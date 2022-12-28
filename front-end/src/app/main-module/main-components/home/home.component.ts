@@ -11,7 +11,13 @@ export class HomeComponent implements OnInit {
   showAllProduct:any=[]
   AllCatgory:any=[]
   Url= 'http://localhost:8686/'
-  show:boolean=true
+  show:boolean=true;
+  //pegination
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 6;
+  tableSizes: any = [3, 6, 9, 12];
+
   constructor(private ProductService:ProductService,private toastrService:ToastrService) { this.getLatestCategoryData()}
 
   ngOnInit(): void {
@@ -66,5 +72,16 @@ export class HomeComponent implements OnInit {
   //   })
   //  })
   // }
+
+
+  onTableDataChange(event: any) {
+    this.page = event;
+    // this.getAllProductData();
+  }
+  onTableSizeChange(event: any): void {
+    this.tableSize = event.target.value;
+    this.page = 1;
+    // this.getAllProductData();
+  }
 
 }

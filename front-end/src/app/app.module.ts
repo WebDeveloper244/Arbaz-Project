@@ -9,6 +9,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http'
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
+    NgxPaginationModule,
   
   ],
   providers: [],
