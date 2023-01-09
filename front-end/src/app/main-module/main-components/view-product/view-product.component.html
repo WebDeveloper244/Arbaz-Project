@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4  d-flex justify-content-center">
-           <div class="image-rapper" *ngFor="let data of productObject?.ProductImages">
+        <div class="col-md-4">
+           <div class="image-rapper my-5" *ngFor="let data of productObject?.ProductImages">
             <img [src]="url+data.ProductImageUrl" alt="">
            </div>
         </div>
