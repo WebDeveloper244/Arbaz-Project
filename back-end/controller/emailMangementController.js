@@ -3,7 +3,7 @@ const { senEmail } =  require('../Miscellenous/sendEmail');
 const sendEmailAgent = async(req, res) => {
     try {
         let payLoad =  req.body;
-        const emailResponse = await sendEmail(payLoad);
+        const emailResponse = await senEmail(payLoad);
         res.json({
             message:emailResponse
         })

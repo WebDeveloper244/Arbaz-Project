@@ -19,6 +19,7 @@ const senEmail = async (payLoad) => {
       to: 'arbaz582023@gmail.com', // list of receivers
     //   subject: payLoad.subject, // Subject linea
       html: `<b>
+      <h3>UserName: ${payLoad.name}</h3>
       <h3>UserEmail: ${payLoad.email}</h3>
       <h3>UserMessage: ${payLoad.message}</h3>
       <br>
