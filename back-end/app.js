@@ -46,12 +46,13 @@ const ProductMangementRouter = require('./Router/productMangementRouter');
 const AdminManagmentRouter=require('./Router/AdminMangementRouter')
 const PayManagmentRouter=require('./Router/PaymentMangementRoute')
 const userManagementRouter=require('./Router/userManagementRouter')
-
+const emailMangementRouter=require('./Router/emailServiceManagementRoute')
 //*****UsingRoutes*****//
 app.use('/ProductMangementRouter', ProductMangementRouter)
 app.use('/AdminManagmentRouter', AdminManagmentRouter)
 app.use('/PayManagmentRouter', PayManagmentRouter)
 app.use('/userManagementRouter',userManagementRouter)
+app.use('/emailMangementRouter',emailMangementRouter)
 //*****UsingRoutes*****//
 
 
