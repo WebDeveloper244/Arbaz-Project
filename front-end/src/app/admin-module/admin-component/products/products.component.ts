@@ -83,7 +83,7 @@ export class ProductsComponent implements OnInit {
   // @ViewChildren('checkBoxes') checkBoxes: QueryList<ElementRef> | undefined;
   
   color=["Red","Black","Blue","Multiple"];
-  categories=["All","Latest"];
+  categories=["All","Latest","Shoes","Pant's","Qurta Collection","Shirt","Makeup","Groceries","Baby's Collection"];
   selectSize=["S","M","L","X-L","XX-L"];
   newSizeArray:any=[];
   imageArray:any=[];

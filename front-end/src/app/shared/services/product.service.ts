@@ -31,5 +31,32 @@ export class ProductService {
   GetDataWhoseCategoryIsAll(){
     return this.http.get('http://localhost:8686/ProductMangementRouter/getDocumentByCatagory')
   }
+  getDataWhsoeCatoryIsShoes(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/shoesCatory')
+  }
+  getDataWhsoeCatoryIsPant(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/pantCatory')
+  }
+  getDataWhsoeCatoryIsQuatra(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/pantCatory')
+  }
+  getDataWhsoeCatoryIsMakup(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/makupCatory')
+  }
+  getDataWhsoeCatoryIsBaby(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/getBabyData')
+  }
+  getDataWhsoeCatoryIsGroceries(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/getGroceriesData')
+  }
+  getDataByFilterFromZeroToTwnety(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/zeroToTwenty')
+  }
+  getDataFromTwentyFiveToFiveHun(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/twentyFiveToFiveHun')
+  }
+  getDataAboveFromFiveHundred(){
+    return this.http.get('http://localhost:8686/ProductMangementRouter/aboveFromFiveHundred')
+  }
 }
 

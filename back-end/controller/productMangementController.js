@@ -363,7 +363,250 @@ const getDocumentByCatagory=async (req,res)=>{
         })
     }
 }
+const shoesCatory=async (req,res)=>{
+    try {
+        // const catagory = req.params.catagory
+        const docToFInd = await ProductModel.find(
+            {
+                category:"Shoes"
+        //    $match:{category:catagory}
+            }
+        )
+        res.json({
+            Message:'Data find successfuly',
+            Result:docToFInd,
+            Data:true
+        })
+        
+    } catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+}
+const pantCatory=async (req,res)=>{
+    try {
+        // const catagory = req.params.catagory
+        const docToFInd = await ProductModel.find(
+            {
+                category:"Pant's"
+        //    $match:{category:catagory}
+            }
+        )
+        res.json({
+            Message:'Data find successfuly',
+            Result:docToFInd,
+            Data:true
+        })
+        
+    } catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+}
+    const quataCatory=async (req,res)=>{
+        try {
+            // const catagory = req.params.catagory
+            const docToFInd = await ProductModel.find(
+                {
+                    category:"Qurta Collection"
+            //    $match:{category:catagory}
+                }
+            )
+            res.json({
+                Message:'Data find successfuly',
+                Result:docToFInd,
+                Data:true
+            })
+            
+        } catch (error) {
+            res.json({
+                Message:error,
+                Result:null,
+                Data:false
+            })
+        }
+   }
+   const makupCatory=async (req,res)=>{
+    try {
+        // const catagory = req.params.catagory
+        const docToFInd = await ProductModel.find(
+            {
+                category:"Makeup"
+        //    $match:{category:catagory}
+            }
+        )
+        res.json({
+            Message:'Data find successfuly',
+            Result:docToFInd,
+            Data:true
+        })
+        
+    } catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+}
+const getBabyData=async(req,res)=>{
+   try {
+    const docToFind=await ProductModel.find({
+        category:"Baby's Collection"
+    })
+    res.json({
+        Message:'Data find successfuly',
+        Result:docToFind,
+        Data:true
+    })
+   } catch (error) {
+    res.json({
+        Message:error,
+        Result:null,
+        Data:false
+    })
+   }
+}
+const getGroceriesData=async(req,res)=>{
+    try {
+     const docToFind=await ProductModel.find({
+         category:"Groceries"
+     })
+     res.json({
+         Message:'Data find successfuly',
+         Result:docToFind,
+         Data:true
+     })
+    } catch (error) {
+     res.json({
+         Message:error,
+         Result:null,
+         Data:false
+     })
+    }
+ }
+ const zeroToTwenty=async(req,res)=>{
+    try {
+        const docToFind=await ProductModel.aggregate(
+            [
+                {
+                  $project:
+                     {
+                        productName : 1,
+                        quantity:1,
+                        price:1,
+                        companyName:1,
+                        color:1,
+                        size:1,
+                        description:1,
+                        ProductImages:1,
+                        category:1,
+                        softDelete:1,
+                        Status:1,
+                        CreateDate:1,
+                       result: { $and: [ { $gt: [ "$price", 0 ] }, { $lt: [ "$price", 250 ] } ] }
+                     }
+                }
+              ]
+        ) 
+         res.json({
+            Message:'Data find successfuly',
+            Result:docToFind,
+            Data:true
+        })
+    } 
+    catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+ }
 
+ const twentyFiveToFiveHun=async(req,res)=>{
+    try {
+        const docToFind=await ProductModel.aggregate(
+            [
+                {
+                  $project:
+                     {
+                        productName : 1,
+                        quantity:1,
+                        price:1,
+                        companyName:1,
+                        color:1,
+                        size:1,
+                        description:1,
+                        ProductImages:1,
+                        category:1,
+                        softDelete:1,
+                        Status:1,
+                        CreateDate:1,
+                       result: { $and: [ { $gt: [ "$price", 250 ] }, { $lt: [ "$price", 500 ] } ] }
+                     }
+                }
+              ]
+        ) 
+         res.json({
+            Message:'Data find successfuly',
+            Result:docToFind,
+            Data:true
+        })
+    } 
+    catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+ }
+
+ const aboveFromFiveHundred=async(req,res)=>{
+    try {
+        const docToFind=await ProductModel.aggregate(
+            [
+                {
+                  $project:
+                     {
+                        productName : 1,
+                        quantity:1,
+                        price:1,
+                        companyName:1,
+                        color:1,
+                        size:1,
+                        description:1,
+                        ProductImages:1,
+                        category:1,
+                        softDelete:1,
+                        Status:1,
+                        CreateDate:1,
+                       result: { $and: [ { $gt: [ "$price", 500 ] }] }
+                     }
+                }
+              ]
+        ) 
+         res.json({
+            Message:'Data find successfuly',
+            Result:docToFind,
+            Data:true
+        })
+    } 
+    catch (error) {
+        res.json({
+            Message:error,
+            Result:null,
+            Data:false
+        })
+    }
+ }
 
 module.exports={
     ProductData,
@@ -374,6 +617,15 @@ module.exports={
     getDocumentById,                             // frontend get api
     updateProductById,
     getDataWithCompanyName,
-    getDocumentByCatagory
+    getDocumentByCatagory,
+    shoesCatory,
+    pantCatory,
+    quataCatory,
+    makupCatory,
+    getBabyData,
+    getGroceriesData,
+    zeroToTwenty,
+    twentyFiveToFiveHun,
+    aboveFromFiveHundred
 }
 //3rd Step
