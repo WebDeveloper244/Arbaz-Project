@@ -1,262 +1,265 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.html{
+    font-size: 62.5%;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
 .navbar{
-    position: fixed;
-    top: 0;
+    /* box-shadow: 0px 5px 10px 0px #aaa; */
+    /* position: fixed; */
     width: 100%;
-    z-index: 1;
-}
-.navbar-toggler:focus {
-    /*Below line will remove the border from the icon
-    I have used bootstrap icon here */
-    /* This will only remove the shadow effect */
-    /* Border is still there */
-
-    /* if you don't want any border then set the property equals to zero */
-    border: 0 !important;
-    box-shadow: none !important;
-  
-    /* This will remove the rounded corner(radious-border)
-    and give square border */
-    /* border-radius: 0 !important; */    
-}
-
-.navbar-toggler {
-    /* This will completely remove border from the icon */
-    /* If you need border for the icon then comment this code */
-     border: 0 !important;
-
-    /* if you want to check the border please uncomment below code */
-    /* border-color: yellow !important; */
-}
-/* media query  */
-@media screen and (min-width: 360px) {
-    .media{width: 100px;}
- }
-
- /* banner */
-
- .navbar-background-color{
+    /* background:red; */
     background-image: linear-gradient(to right,rgb(0, 0, 0),#0f70ff);
-
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-   
- }
- body{
-    font-family: poppins;
-}
-.bg-img{
-    /* background-image: linear-gradient(to right,rgb(0, 0, 0),red); */
-    background-image: linear-gradient(to right,rgb(0, 0, 0),#0f70ff);
-
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 75vh;
-    margin-top: -91px;
-}
-.banner-img{
-    background-image: url("../../../../assets/img1-removebg-preview.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 80vh;
-    height: 50vh;
-    margin-top: 122px;
-}
-.banner-heading{
-    font-size: 60px;
-    /* font-style: italic; */
-    /* font-family: 'Alegreya SC'; */
-    /* margin-top: 10vh; */
-    font-weight: 800;
-    font-family: 'Trocchi', serif;
-    margin-top: 137px;
-}
-.banner-heading2{
-    font-size: 40px;
-    /* font-style: italic; */
-    color: #ffffff;
-    /* margin-top: 10vh; */
-    font-weight: 900;
-    font-family: 'Alegreya SC';
-    /* font-family: 'Trocchi', serif; */
-}
-/* CSS */
-.button-1 {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #18181a;
-    color: #ffffff;
-    display: inline-block;
-    width: 25%;
-    border-radius: 5px;
-    font-size: 15px;
-    line-height: 15px;
-    padding: 18px 18px 17px;
-    text-decoration: none;
-    cursor: pointer;
-    background: #1256bb;
-    /* border-color: rgb(255, 255, 255); */
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .button-1 span:first-child {
-    position: relative;
-    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
-    z-index: 10;
-  }
-  
-  .button-1 span:last-child {
-    color: rgb(0, 0, 0);
-    display: block;
-    position: absolute;
-    bottom: 0;
-    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    /* #44bd32 */
+    color: rgb(245, 236, 236);
+    /* opacity: 0.85; */
     z-index: 100;
-    opacity: 0;
-    top: 50%;
-    left: 50%;
-    transform: translateY(225%) translateX(-50%);
-    height: 14px;
-    line-height: 13px;
-  }
-  
-  .button-1:after {
-    content: "";
-    position: absolute;
-    bottom: -50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    transform-origin: bottom center;
-    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
-    transform: skewY(9.3deg) scaleY(0);
-    z-index: 50;
-  }
-  
-  .button-1:hover:after {
-    transform-origin: bottom center;
-    transform: skewY(9.3deg) scaleY(2);
-    width: 100%;
-  }
-  
-  .button-1:hover span:last-child {
-    transform: translateX(-50%) translateY(-100%);
-    opacity: 1;
-    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
-  }
-  @media (max-width: 486px){
-   .button-1{
-     width: 29%;
-   }
- 
- }
-  @media (max-width: 437px){
-   .button-1 {
-     width: 38%;
-   }
- }
-  @media (max-width: 352px){
-   .button-1 {
-     width: 38%;
-   }
- }
- /* ****************************************  Banner-Responsive */
- @media (max-width: 1199px){
-    .bg-img{
-        height: 70vh;
-    }
-    .banner-img{
-        width: 70vh;
-    }
-    .banner-heading{
-        margin-top: 21vh;
-        font-size: 52px;
-    }
-    .banner-heading2{
-        font-size: 38px;
-    }
- 
-    }
- @media (max-width: 991px){
-    .bg-img{
-        height: 76vh;
-    }
-    .banner-img{
-        width: 49vh;
-        height: 48vh;
-    }
-    .banner-heading{
-        margin-top: 18vh;
-        font-size: 40px;
-    }
-    .banner-heading2{
-        font-size: 38px;
-    }
 }
- @media (max-width: 767px){
-    .bg-img{
-        height: 88vh;
-    }
-    .banner-img{
-        width: 55vh;
-        height: 46vh;
-        margin-top: 1px;
-    }
-    .banner-heading{
-        margin-top: 19vh;
-font-size: 41px;
-    }
-    .banner-heading2{
-        font-size: 30px;
-    }
- 
-    }
- @media (max-width: 576px){
-    .bg-img{
-        height: 79vh;
-    }
-    .banner-img{
-        width: 51vh;
-        height: 40vh;
-    }
-    .banner-heading{
-        margin-top: 16vh;
-        font-size: 28px;
-    }
-    .banner-heading2{
-        font-size: 30px;
-    }
- 
-    }
- @media (max-width: 372px){
-    .bg-img{
-        height: 83vh;
-    }
-    .banner-img{
-        width: 40vh;
-        height: 40vh;
-    }
-    .banner-heading{
-        margin-top: 15vh;
-        font-size: 40px;
-    }
-    .banner-heading2{
-        font-size: 20px;
-    }
- 
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.fa-cart-shopping{
+   
+position: relative;
+top: 0px;
+bottom: 13px;
+font-size: 27px;
+}
+.fa-sort-down{
+    margin-left: -20px;
+font-size: 16px;
+position: absolute;
+bottom: 18px;
+margin-left: 2px;
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+   
+}
+
+
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    font-family: poppins;
+    font-weight: 700;
+}
+
+/************************** nav-bar-hover */
+/* ul>li>a{
+    color: rgb(247, 247, 247);
+  }
+        
+  ul>li>a:hover {
+      color: #fff;
+      text-shadow:
+      0 0 5px #0ff,
+      0 0 5px #0ff,
+      0 0 5px #0ff,
+      0 0 5px #0ff,
+      0 0 5px #0ff,
+      0 0 5px #0ff,
+      0 0 5px #0ff;
+     
+     
+     
+        -moz-transition: all 0.2s ease-out;
+          -o-transition: all 0.2s ease-out;
+          -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+    } */
+
+    ul>li>a{
+        color: rgb(255, 255, 255);
+      }
+            
+      ul>li>a:hover {
+          color: rgb(255, 255, 255);
+          text-shadow:
+          0 0 5px rgb(243, 255, 255),
+          0 0 5px rgb(243, 255, 255);
+         
+         
+         
+         
+            -moz-transition: all 0.2s ease-out;
+              -o-transition: all 0.2s ease-out;
+              -webkit-transition: all 0.2s ease-out;
+              transition: all 0.2s ease-out;
+        }
+
+/**************************  */
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
     }
 
-/* ********************* Default button */
-.red{
-    color: red;
-};
-.pointer{
-    cursor: pointer;
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+    .logo{
+        position: absolute;
+top: 19px;
+right: 15px;
+font-size: 1.5rem;
+    }
+    .logoimg{
+        /* animation:mover 1s infinite alternate; */
+        height: 62px;
+        width: 62px;
+        margin-top: -26px;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: -9px;
+    }
+
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #0f70ff;
+        
+    }
+    
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items{
+        padding-top: 100px;
+        background:#3c88fa;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        /* box-shadow:  5px 0px 10px 0px #aaa; */
+        overflow: scroll;
+        margin-top: -20px;
+    }
+    ul>li>a{
+        color: rgb(255, 255, 255);
+      }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+}
+@media (max-width: 358px){
+    .logo{
+        position: absolute;
+top: 19px;
+right: 15px;
+font-size: 1.5rem;
+    }
 }
